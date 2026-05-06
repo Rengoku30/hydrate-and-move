@@ -1,0 +1,28 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { crx } from '@crxjs/vite-plugin';
+import path from 'node:path';
+import manifest from './manifest.config';
+
+export default defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
+  plugins: [react(), crx({ manifest })],
+  build: {
+    target: 'esnext',
+    rollupOptions: {
+      input: {
+        dashboard: path.resolve(__dirname, 'src/dashboard/index.html'),
+        reminder: path.resolve(__dirname, 'src/reminder/index.html'),
+      },
+    },
+  },
+  server: {
+    port: 5173,
+    strictPort: true,
+    hmr: { port: 5173 },
+  },
+});

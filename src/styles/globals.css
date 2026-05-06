@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-cream text-walnut antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-bronze;
+  }
+
+  ::selection {
+    background: #6e0d25;
+    color: #ffffb3;
+  }
+
+  /* Subtle paper texture using gradients (no external assets) */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(1200px 600px at 0% 0%, rgba(220, 171, 107, 0.15), transparent 60%),
+      radial-gradient(900px 500px at 100% 100%, rgba(110, 13, 37, 0.06), transparent 60%);
+    z-index: -1;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #6e0d25;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 font-semibold
+           transition-all duration-150 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed
+           min-h-[44px];
+  }
+
+  .btn-primary {
+    @apply btn bg-wine text-cream shadow-soft hover:bg-walnut;
+  }
+
+  .btn-secondary {
+    @apply btn bg-sand text-walnut hover:bg-sand/80;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-walnut hover:bg-walnut/10 border border-walnut/20;
+  }
+
+  .card {
+    @apply rounded-xl2 bg-white/80 backdrop-blur-sm shadow-soft border border-bronze/10 p-5;
+  }
+
+  .label {
+    @apply block text-xs font-semibold uppercase tracking-wider text-bronze mb-1.5;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-bronze/20 bg-white/70 px-3 py-2.5 text-walnut
+           placeholder:text-walnut/40 focus:border-wine focus:bg-white outline-none
+           min-h-[44px] transition-colors;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(106, 56, 31, 0.4) transparent;
+  }
+}
