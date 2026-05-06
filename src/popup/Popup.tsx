@@ -89,7 +89,7 @@ export function Popup() {
             value={hydPct}
             size={108}
             stroke={10}
-            fillColor="#6E0D25"
+            fillColor="#2A9D8F"
             label={`${Math.round(hydPct * 100)}%`}
             sublabel="Water"
           />
@@ -105,7 +105,7 @@ export function Popup() {
             value={movPct}
             size={108}
             stroke={10}
-            fillColor="#774E24"
+            fillColor="#E9C46A"
             label={`${today.movementDone}`}
             sublabel="Breaks"
           />

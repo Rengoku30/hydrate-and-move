@@ -7,11 +7,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.resolve(__dirname, '..', 'public', 'icons');
 
 const palette = {
-  wine: '#6E0D25',
-  cream: '#FFFFB3',
-  bronze: '#774E24',
-  walnut: '#6A381F',
-  sand: '#DCAB6B',
+  background: '#F8F9F4',
+  card: '#FFFFFF',
+  primary: '#2A9D8F',
+  secondary: '#E9C46A',
+  text: '#264653',
 };
 
 function buildSvg(size) {
@@ -32,18 +32,18 @@ function buildSvg(size) {
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="${palette.wine}"/>
-      <stop offset="60%" stop-color="${palette.walnut}"/>
-      <stop offset="100%" stop-color="${palette.bronze}"/>
+      <stop offset="0%" stop-color="${palette.primary}"/>
+      <stop offset="70%" stop-color="${palette.text}"/>
+      <stop offset="110%" stop-color="${palette.primary}"/>
     </linearGradient>
     <linearGradient id="drop" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="${palette.cream}"/>
-      <stop offset="100%" stop-color="${palette.sand}"/>
+      <stop offset="0%" stop-color="${palette.card}"/>
+      <stop offset="100%" stop-color="${palette.secondary}"/>
     </linearGradient>
   </defs>
   <rect width="${size}" height="${size}" rx="${size * 0.22}" fill="url(#bg)"/>
-  <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${palette.cream}" stroke-opacity="0.18" stroke-width="${stroke}"/>
-  <path d="${dropPath}" fill="url(#drop)" stroke="${palette.cream}" stroke-width="${stroke * 0.6}" stroke-linejoin="round"/>
+  <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${palette.card}" stroke-opacity="0.18" stroke-width="${stroke}"/>
+  <path d="${dropPath}" fill="url(#drop)" stroke="${palette.card}" stroke-width="${stroke * 0.6}" stroke-linejoin="round"/>
 </svg>`;
 }
 

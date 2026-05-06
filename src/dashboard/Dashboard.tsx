@@ -6,7 +6,6 @@ import {
   Droplets,
   Footprints,
   Moon,
-  Palette,
   Sparkles,
   User,
 } from 'lucide-react';
@@ -17,7 +16,6 @@ import { ReminderSettings } from '../components/ReminderSettings';
 import { DndPanel } from '../components/DndPanel';
 import { HistoryChart } from '../components/HistoryChart';
 import { TodayCards } from '../components/TodayCards';
-import { palette } from '../lib/theme';
 import { LogEntry } from '../lib/types';
 
 export function Dashboard() {
@@ -94,14 +92,6 @@ export function Dashboard() {
           icon={<Sparkles size={20} />}
         >
           <RecentLogs logs={state.logs} />
-        </Section>
-
-        <Section
-          title="Theme palette"
-          description="Hydrate &amp; Move uses these five colors throughout the experience."
-          icon={<Palette size={20} />}
-        >
-          <ThemePreview />
         </Section>
       </main>
 
@@ -193,31 +183,4 @@ function ResolvedPill({
   };
   const v = map[resolution];
   return <span className={`pill ${v.cls}`}>{v.label}</span>;
-}
-
-function ThemePreview() {
-  const swatches: { name: string; hex: string; usage: string }[] = [
-    { name: 'Wine', hex: palette.wine, usage: 'Primary actions, streak accents' },
-    { name: 'Cream', hex: palette.cream, usage: 'Canvas background' },
-    { name: 'Bronze', hex: palette.bronze, usage: 'Headings, borders' },
-    { name: 'Walnut', hex: palette.walnut, usage: 'Body text' },
-    { name: 'Sand', hex: palette.sand, usage: 'Secondary buttons, accents' },
-  ];
-  return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
-      {swatches.map((s) => (
-        <div
-          key={s.hex}
-          className="rounded-xl overflow-hidden border border-bronze/15 shadow-soft"
-        >
-          <div className="h-16" style={{ background: s.hex }} />
-          <div className="p-3 bg-white/70">
-            <div className="font-display text-bronze">{s.name}</div>
-            <div className="text-xs text-walnut/70 font-mono">{s.hex}</div>
-            <div className="text-xs text-walnut/60 mt-1">{s.usage}</div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
 }

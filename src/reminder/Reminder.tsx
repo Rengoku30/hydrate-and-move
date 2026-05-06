@@ -141,7 +141,7 @@ function FullBleed({ children }: { children: React.ReactNode }) {
       className="min-h-screen w-full flex items-center justify-center px-6 py-8"
       style={{
         background:
-          'linear-gradient(135deg, #6E0D25 0%, #6A381F 60%, #774E24 100%)',
+          'linear-gradient(135deg, #2A9D8F 0%, #264653 70%, #2A9D8F 130%)',
       }}
     >
       {children}

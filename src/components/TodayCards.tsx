@@ -37,7 +37,7 @@ export function TodayCards({ state }: Props) {
           value={hydPct}
           size={120}
           stroke={12}
-          fillColor="#6E0D25"
+          fillColor="#2A9D8F"
           label={`${Math.round(hydPct * 100)}%`}
           sublabel="Water"
         />
@@ -65,7 +65,7 @@ export function TodayCards({ state }: Props) {
           value={movPct}
           size={120}
           stroke={12}
-          fillColor="#774E24"
+          fillColor="#E9C46A"
           label={`${today.movementDone}`}
           sublabel="Breaks"
         />

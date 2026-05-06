@@ -5,11 +5,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        wine: '#6E0D25',
-        cream: '#FFFFB3',
-        bronze: '#774E24',
-        walnut: '#6A381F',
-        sand: '#DCAB6B',
+        // New palette (requested)
+        // Background: #F8F9F4, Cards: #FFFFFF, Primary: #2A9D8F, Secondary: #E9C46A, Text: #264653
+        wine: '#2A9D8F', // primary accent (hydration)
+        sand: '#E9C46A', // secondary accent (movement)
+        walnut: '#264653', // text
+        cream: '#F8F9F4', // soft background base
+        bronze: '#264653', // headings/borders (kept aligned with text)
+        sky: '#F8F9F4', // app canvas background (body)
       },
       fontFamily: {
         sans: [
@@ -25,8 +28,8 @@ export default {
         display: ['"Fraunces"', 'Georgia', 'serif'],
       },
       boxShadow: {
-        soft: '0 4px 16px rgba(106, 56, 31, 0.08)',
-        ring: '0 0 0 4px rgba(110, 13, 37, 0.15)',
+        soft: '0 10px 30px rgba(38, 70, 83, 0.12)',
+        ring: '0 0 0 4px rgba(42, 157, 143, 0.22)',
       },
       borderRadius: {
         xl2: '1.25rem',

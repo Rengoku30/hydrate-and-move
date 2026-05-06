@@ -1,9 +1,9 @@
 export const palette = {
-  wine: '#6E0D25',
-  cream: '#FFFFB3',
-  bronze: '#774E24',
-  walnut: '#6A381F',
-  sand: '#DCAB6B',
+  background: '#F8F9F4',
+  card: '#FFFFFF',
+  primary: '#2A9D8F',
+  secondary: '#E9C46A',
+  text: '#264653',
 } as const;
 
 export type PaletteKey = keyof typeof palette;
